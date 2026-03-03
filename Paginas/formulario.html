@@ -7,16 +7,79 @@
     <title id="titulo">Formulario</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+    <!-- estilos básicos -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        #body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="button"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        form input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        form input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        ul#lista {
+            list-style: inside disc;
+            padding-left: 0;
+        }
+
+        ul#lista li {
+            margin-bottom: 4px;
+        }
+    </style>
+
     <script src="JS/Ejercicios/formulario.js"></script>
 </head>
 
 <body id="body">
     <form for="fname">
-        <label for="fname">Cambiar tema</label><br>
+        <h2>Cambiar tema</h2>
         <input type="button" value="Cambiar tema" onclick="cambiarColor()"><br><br>
 
-        <label id="tituloLista">Agregar elementos</label><br>
-        <input id="textoLista" type="text" value="Agregar elemento">
+        <h2>Creacion de lista</h2>
+        <input id="textoLista" type="text" placeholder="Agregue elemento">
         <input type="button" value="Agregar elemento" onclick="agregarElemento()">
         <input type="button" value="Eliminar elemento" onclick="eliminarElemento()">
         <br><br>
@@ -24,11 +87,13 @@
         <ul id="lista">
         </ul>
 
-        Validar Formulario <input type="text" name="fname"><br>
+        <h2>Validar formulario</h2>
+        <input type="text" name="fname"><br>
         <input type="button" value="Validar" onclick="validarForm()">
         <br><br>
 
-        <input type="button" value="Evento de mouse" onmouseover="this.style.backgroundColor='yellow';"
+        <h2>Capturar evento</h2>
+        <input type="button" value="Evento de mouse" onmouseover="this.style.backgroundColor='lightblue';"
             onmouseout="this.style.backgroundColor='red';">
     </form>
     <script>
