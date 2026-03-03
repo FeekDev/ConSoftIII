@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title id="titulo">Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src="JS/Ejercicios/formulario.js"></script>
+</head>
+
+<body id="body">
+    <form name="myForm" onsubmit="return validarForm()" method="post">
+        <label for="fname">Cambiar tema</label><br>
+        <input type="button" value="Cambiar tema" onclick="cambiarColor()"><br><br>
+        <label for="fname">Agregar elementos</label>
+        <input id="" type="text" value="Agregar elemento">
+        <input type="submit" value="Agregar elemento" onclick="agregarElemento()">
+        <br><br>
+        <ul id="lista">
+        </ul>
+        Name : <input type="text" name="fname"><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function cambiarColor() {
+            document.body.style.backgroundColor = "lightgreen";
+        }
+
+        function agregarElemento() {
+            const lista = document.getElementById("lista");
+            const nuevoElemento = document.createElement("li");
+            nuevoElemento.textContent = "Aceite";
+            lista.appendChild(nuevoElemento);
+        }
+
+        function validarForm () {
+                var x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                alert("Name must be filled out");
+                return false;
+                }
+                else {
+                    alert("Form submitted successfully");
+                    return true;
+                }
+        }
+
+    </script>
+</body>
+
+</html>
