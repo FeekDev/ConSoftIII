@@ -11,22 +11,25 @@
 </head>
 
 <body id="body">
-    <form>
+    <form for="fname">
         <label for="fname">Cambiar tema</label><br>
         <input type="button" value="Cambiar tema" onclick="cambiarColor()"><br><br>
 
-        <label id="tituloLista">Agregar elementos</label>
+        <label id="tituloLista">Agregar elementos</label><br>
         <input id="textoLista" type="text" value="Agregar elemento">
         <input type="button" value="Agregar elemento" onclick="agregarElemento()">
+        <input type="button" value="Eliminar elemento" onclick="eliminarElemento()">
         <br><br>
 
         <ul id="lista">
         </ul>
 
-        Validar Formulario <input type="text" name="fname"><br><br>
-        <input type="submit" value="submit" onsubmit="return validarForm()">
+        Validar Formulario <input type="text" name="fname"><br>
+        <input type="button" value="Validar" onclick="validarForm()">
+        <br><br>
 
-
+        <input type="button" value="Evento de mouse" onmouseover="this.style.backgroundColor='yellow';"
+            onmouseout="this.style.backgroundColor='red';">
     </form>
     <script>
         function cambiarColor() {
@@ -46,15 +49,25 @@
             lista.appendChild(nuevoElemento);
         }
 
-        function validarForm() {
-            const x = document.forms[0][3].value;
-            if (x == "") {
-                alert("El campo no puede estar vacio");
-                return false;
+        function eliminarElemento() {
+            const lista = document.getElementById("lista");
+            if (lista.lastChild) {
+                const ultimoElemento = lista.lastChild;
+                lista.removeChild(ultimoElemento);
             }
         }
 
-
+        function validarForm() {
+            const input = document.getElementsByName("fname")[0];
+            if (input.value === "") {
+                alert("El campo no puede estar vacío");
+                return false;
+            }
+            else {
+                alert("Formulario enviado correctamente");
+                return true;
+            }
+        }
 
     </script>
 </body>
