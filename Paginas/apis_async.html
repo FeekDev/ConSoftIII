@@ -4,14 +4,88 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>API Usuarios</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            h1 {
+                color: white;
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 2.5em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            #cargar {
+                display: block;
+                margin: 0 auto 30px;
+                padding: 12px 30px;
+                background-color: #667eea;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            #cargar:hover {
+                background-color: #764ba2;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            #cargar:active {
+                transform: translateY(0);
+            }
+
+            #lista {
+                list-style: none;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            #lista li {
+                background: white;
+                padding: 20px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                line-height: 1.8;
+                color: #333;
+            }
+
+            #lista li:hover {
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+                transform: translateY(-2px);
+                transition: all 0.3s ease;
+            }
+
+            #lista strong {
+                color: #667eea;
+                font-size: 1.2em;
+            }
+        </style>
         <body>
             <h1>APIS</h1>
 
-            <button id="cargar"> Cargar usuarios</button>
+            <button id="cargar">Cargar usuarios</button>
             <ul id="lista"></ul>
 
-            <script src="../JS/Ejercicios/apis.js"></script>
+            <script src="../JS/Ejercicios/api_async.js"></script>
         </body>
     </head>
 </html>
